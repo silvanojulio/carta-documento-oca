@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Carta Documento OCA",
+  "description": "Sirve para completar desde un listado el formulario de envío carta documento.",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches":["https://www3.oca.com.ar/*"],
+      "js": [
+        "js/lib/jquery-3.5.1.min.js",
+        "js/app/content.js"
+      ],
+      "all_frames": true
+    }
+  ],
+  "background": {
+    "scripts": ["js/lib/jquery-3.5.1.min.js", "js/app/background.js"]
+  },
+  "browser_action": {
+    "default_icon": "assets/icons/curriculum_icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Carta Documento OCA"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}
